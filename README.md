@@ -4,6 +4,7 @@ Supported Keyboard IC's:
 
 1. [ADP5589](https://www.analog.com/en/products/adp5589.html#)
 2. [LM8330](https://www.ti.com/product/LM8330)
+2. [TCA8418](https://www.ti.com/lit/ds/symlink/tca8418.pdf)
 
 This library is written in C++ (v11).
 
