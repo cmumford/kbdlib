@@ -1,4 +1,4 @@
-This is a simple library for interfacing with Keyboard IC's.
+A C++ library for interfacing with a few keyboard IC's.
 
 Supported Keyboard IC's:
 
@@ -6,7 +6,9 @@ Supported Keyboard IC's:
 2. [LM8330](https://www.ti.com/product/LM8330)
 2. [TCA8418](https://www.ti.com/lit/ds/symlink/tca8418.pdf)
 
-This library is written in C++ (v11).
+This library does not communicate with the IC's via I<sup>2</sup>C. Instead
+it contains enums, types, and register definitions to make it easier to
+decode and encode register values.
 
 ## Developer Notes
 
