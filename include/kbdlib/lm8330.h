@@ -94,7 +94,7 @@ enum class RegNum : uint8_t {
 };
 // clang-format on
 
-namespace Register {
+namespace reg {
 
 struct IOCFG {
   uint8_t Reserved1 : 3;  // Reserved - set to zero.
@@ -304,6 +304,6 @@ static_assert(sizeof(IOCFG) == sizeof(uint8_t));
 static_assert(sizeof(IOPC1) == sizeof(uint16_t));
 static_assert(sizeof(KBDDEDCFG) == sizeof(uint16_t));
 
-}  // namespace Register
+}  // namespace reg
 }  // namespace lm8330
 }  // namespace kbd

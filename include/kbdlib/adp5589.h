@@ -291,7 +291,7 @@ enum class CoreFrequency : uint8_t {
   kHz500 = 0b11,
 };
 
-namespace Register {
+namespace reg {
 
 struct ID {
   uint8_t MAN : 4;  // Manufacturer.
@@ -1122,7 +1122,7 @@ struct INT_EN {
   operator uint8_t() const;
 };
 
-}  // namespace Register
+}  // namespace reg
 
 /**
  * @brief Return a string representing the event ID.

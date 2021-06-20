@@ -63,7 +63,7 @@ enum class RegNum : uint8_t {
 };
 // clang-format on
 
-namespace Register {
+namespace reg {
 
 struct CFG {
   uint8_t KE_IEN : 1;        // Key events interrupt enable to host processor.
@@ -137,6 +137,6 @@ struct GPIO_INT_STAT3 {
   uint8_t Unused : 6;
 };
 
-}  // namespace Register
-}  // namespace tca8414
+}  // namespace reg
+}  // namespace tca8418
 }  // namespace kbd

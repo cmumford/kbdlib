@@ -9,7 +9,7 @@
 
 namespace kbd {
 namespace adp5589 {
-namespace Register {
+namespace reg {
 
 const char* EventToName(EventID event) {
   switch (static_cast<uint8_t>(event)) {
@@ -342,6 +342,6 @@ INT_STATUS::operator uint8_t() const {
          (static_cast<uint8_t>(EVENT_INT) << 0);
 }
 
-}  // namespace Register
+}  // namespace reg
 }  // namespace adp5589
 }  // namespace kbd
