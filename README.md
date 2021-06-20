@@ -14,5 +14,5 @@ This library is written in C++ (v11).
 All code should be formatted as so:
 
 ```shell
-clang-format -i <source_file>`
+clang-format -i <source_file>
 ```
