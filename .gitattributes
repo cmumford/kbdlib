@@ -1,0 +1,12 @@
+* text=auto
+
+# Others.
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.c text eol=lf
+*.cc text eol=lf
+*.h text eol=lf
+*.ini text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+LICENSE text eol=lf
