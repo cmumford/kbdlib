@@ -117,7 +117,7 @@ struct KBDSIZE {
   uint8_t ROWSIZE : 4;  // Number of rows in the keyboard matrix.
   uint8_t COLSIZE : 4;  // Number of columns in the keyboard matrix.
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
