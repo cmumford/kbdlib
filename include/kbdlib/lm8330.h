@@ -11,6 +11,11 @@
 namespace kbd {
 namespace lm8330 {
 
+// The datasheet says the address is 0x88, but this is not a valid I2C address
+// (> 127). I believe it meant that once shifted left one bit the value
+// should be 0x88 = 0b10001000. Shifted right once is 0x44 = 0b01000100.
+constexpr uint8_t kSlaveAddress = 0x44;  // I2C address of LM8330 IC.
+
 // clang-format off
 // See datasheet pg. 43.
 enum class RegNum : uint8_t {
