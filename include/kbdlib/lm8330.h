@@ -132,7 +132,7 @@ struct CLKEN {
   uint8_t Reserved2 : 1;  // Reserved - set to zero.
   uint8_t KBDEN : 1;      // Keyboard clock enabled (enables/disables key scan).
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
