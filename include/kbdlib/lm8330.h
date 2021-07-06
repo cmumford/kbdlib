@@ -303,6 +303,7 @@ struct KBDIS {
   uint8_t KLINT : 1;   // Key lost interrupt indicates a lost key-code.
   uint8_t SINT : 1;    // Scan interrupt.
 
+  KBDIS(uint8_t value);
   operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
 };
 

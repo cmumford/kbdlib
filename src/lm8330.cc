@@ -30,6 +30,13 @@ IRQST::IRQST(uint8_t value)
       TIM0IRQ((value & 0b00000010) >> 1),
       GPIOIRQ((value & 0b00000001) >> 0) {}
 
+KBDIS::KBDIS(uint8_t value)
+    : Reserved(0),
+      ELINT((value & 0b00001000) >> 3),
+      EVTINT((value & 0b00000100) >> 2),
+      KLINT((value & 0b00000010) >> 1),
+      SINT((value & 0b00000001) >> 0) {}
+
 }  // namespace reg
 }  // namespace lm8330
 }  // namespace kbd
