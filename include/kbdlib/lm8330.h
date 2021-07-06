@@ -188,6 +188,7 @@ struct IRQST {
   uint8_t TIM0IRQ : 1;   // Timer0 expiry (CDIRQ or CYCIRQ). 1: active.
   uint8_t GPIOIRQ : 1;   // GPIO interrupt (further selection in GPIO module).
 
+  IRQST(uint8_t value);
   operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
 };
 

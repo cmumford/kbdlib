@@ -21,6 +21,15 @@ CLKEN::operator uint8_t() const {
          (static_cast<uint8_t>(KBDEN) << 0);
 }
 
+IRQST::IRQST(uint8_t value)
+    : PORIRQ((value & 0b10000000) >> 7),
+      KBDIRQ((value & 0b01000000) >> 6),
+      Reserved(0),
+      TIM2IRQ((value & 0b00001000) >> 3),
+      TIM1IRQ((value & 0b00000100) >> 2),
+      TIM0IRQ((value & 0b00000010) >> 1),
+      GPIOIRQ((value & 0b00000001) >> 0) {}
+
 }  // namespace reg
 }  // namespace lm8330
 }  // namespace kbd
