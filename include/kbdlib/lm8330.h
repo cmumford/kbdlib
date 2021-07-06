@@ -210,7 +210,7 @@ struct EVTCODE {
                        // 12 for special function key or and 13 & 14 for
                        // dedicated key) or released.
 
-  operator uint8_t() const;
+  EVTCODE(uint8_t value);
 };
 
 /**
@@ -225,7 +225,7 @@ struct KBDCODE {
   uint8_t KEYCOL : 4;    // Column index of detected (0 to 11, 12 for special
                          // function key and 13 & 14 for dedicated KPY key).
 
-  operator uint8_t() const;
+  KBDCODE(uint8_t value);
 };
 
 /**

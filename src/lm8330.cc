@@ -57,6 +57,16 @@ KBDMSK::operator uint8_t() const {
          (static_cast<uint8_t>(MSKSINT) << 0);
 }
 
+KBDCODE::KBDCODE(uint8_t value)
+    : MULTIKEY((value & 0b10000000) >> 7),
+      KEYROW((value & 0b01110000) >> 4),
+      KEYCOL((value & 0b00001111) >> 0) {}
+
+EVTCODE::EVTCODE(uint8_t value)
+    : RELEASE((value & 0b10000000) >> 7),
+      KEYROW((value & 0b01110000) >> 4),
+      KEYCOL((value & 0b00001111) >> 0) {}
+
 }  // namespace reg
 }  // namespace lm8330
 }  // namespace kbd
