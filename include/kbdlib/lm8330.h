@@ -107,7 +107,7 @@ struct IOCFG {
   uint8_t Reserved2 : 1;  // Reserved - set to zero.
   uint8_t BALLCFG : 3;    // Select column to configure.
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
@@ -154,7 +154,8 @@ struct KBDMSK {
   uint8_t MSKLINT : 1;   // keyboard lost interrupt RKLINT is masked.
   uint8_t MSKSINT : 1;   // keyboard status interrupt RSINT is masked.
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  KBDMSK& operator=(uint8_t);
+  operator uint8_t() const;
 };
 
 /**
@@ -169,7 +170,7 @@ struct KBDIC {
                       // and RELINT.
   uint8_t KBDIC : 1;  // Clear RSINT and RKLINT interrupt bits.
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
@@ -189,7 +190,7 @@ struct IRQST {
   uint8_t GPIOIRQ : 1;   // GPIO interrupt (further selection in GPIO module).
 
   IRQST(uint8_t value);
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
@@ -209,7 +210,7 @@ struct EVTCODE {
                        // 12 for special function key or and 13 & 14 for
                        // dedicated key) or released.
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
@@ -224,7 +225,7 @@ struct KBDCODE {
   uint8_t KEYCOL : 4;    // Column index of detected (0 to 11, 12 for special
                          // function key and 13 & 14 for dedicated KPY key).
 
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
 
 /**
@@ -256,7 +257,7 @@ struct IOPC1 {
   Pull KPY1PR : 2;
   Pull KPY0PR : 2;
 
-  operator uint16_t() const { return *reinterpret_cast<const uint16_t*>(this); }
+  operator uint16_t() const;
 };
 
 /**
@@ -288,7 +289,7 @@ struct KBDDEDCFG {
   uint16_t KPY3 : 1;
   uint16_t KPY2 : 1;
 
-  operator uint16_t() const { return *reinterpret_cast<const uint16_t*>(this); }
+  operator uint16_t() const;
 };
 
 /**
@@ -304,12 +305,8 @@ struct KBDIS {
   uint8_t SINT : 1;    // Scan interrupt.
 
   KBDIS(uint8_t value);
-  operator uint8_t() const { return *reinterpret_cast<const uint8_t*>(this); }
+  operator uint8_t() const;
 };
-
-static_assert(sizeof(IOCFG) == sizeof(uint8_t));
-static_assert(sizeof(IOPC1) == sizeof(uint16_t));
-static_assert(sizeof(KBDDEDCFG) == sizeof(uint16_t));
 
 }  // namespace reg
 }  // namespace lm8330

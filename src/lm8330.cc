@@ -11,6 +11,10 @@ namespace kbd {
 namespace lm8330 {
 namespace reg {
 
+static_assert(sizeof(IOCFG) == sizeof(uint8_t));
+static_assert(sizeof(IOPC1) == sizeof(uint16_t));
+static_assert(sizeof(KBDDEDCFG) == sizeof(uint16_t));
+
 KBDSIZE::operator uint8_t() const {
   return (static_cast<uint8_t>(ROWSIZE) << 4) |
          (static_cast<uint8_t>(COLSIZE) << 0);
@@ -36,6 +40,22 @@ KBDIS::KBDIS(uint8_t value)
       EVTINT((value & 0b00000100) >> 2),
       KLINT((value & 0b00000010) >> 1),
       SINT((value & 0b00000001) >> 0) {}
+
+KBDMSK& KBDMSK::operator=(uint8_t value) {
+  Reserved = 0;
+  MSKELINT = (value & 0b00001000) >> 3;
+  MSKEINT = (value & 0b00000100) >> 2;
+  MSKLINT = (value & 0b00000010) >> 1;
+  MSKSINT = (value & 0b00000001) >> 0;
+  return *this;
+}
+
+KBDMSK::operator uint8_t() const {
+  return (static_cast<uint8_t>(MSKELINT) << 3) |
+         (static_cast<uint8_t>(MSKEINT) << 2) |
+         (static_cast<uint8_t>(MSKLINT) << 1) |
+         (static_cast<uint8_t>(MSKSINT) << 0);
+}
 
 }  // namespace reg
 }  // namespace lm8330
