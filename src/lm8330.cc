@@ -57,6 +57,12 @@ KBDMSK::operator uint8_t() const {
          (static_cast<uint8_t>(MSKSINT) << 0);
 }
 
+KBDIC::operator uint8_t() const {
+  return (static_cast<uint8_t>(SFOFF) << 7) |
+         (static_cast<uint8_t>(EVTIC) << 1) |
+         (static_cast<uint8_t>(KBDIC) << 0);
+}
+
 KBDCODE::KBDCODE(uint8_t value)
     : MULTIKEY((value & 0b10000000) >> 7),
       KEYROW((value & 0b01110000) >> 4),
