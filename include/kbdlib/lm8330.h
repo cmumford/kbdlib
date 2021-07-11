@@ -164,8 +164,8 @@ struct KBDMSK {
  * Setting these bits clears Keypad active Interrupts.
  */
 struct KBDIC {
-  uint8_t SFOFF : 1;     // Switches off scanning of special function (SF) keys.
-  uint8_t Reserved : 5;  // Keyboard event lost interrupt RELINT is masked.
+  uint8_t SFOFF : 1;  // Switches off scanning of special function (SF) keys.
+  uint8_t Reserved : 5;
   uint8_t EVTIC : 1;  // Clear EVTCODE FIFO and corresponding interrupts REVTINT
                       // and RELINT.
   uint8_t KBDIC : 1;  // Clear RSINT and RKLINT interrupt bits.
