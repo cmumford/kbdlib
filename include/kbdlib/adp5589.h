@@ -603,7 +603,7 @@ struct UNLOCK {
    * Defines the first event that must be detected to unlock the keypad after
    * LOCK_EN has been set.
    */
-  uint8_t UNLOCK : 7;
+  uint8_t unlock : 7;
 
   operator uint8_t() const;
 };
@@ -630,7 +630,7 @@ struct EXT_LOCK_EVENT {
    *
    * When this event is detected, LOCK_INT is set.
    */
-  uint8_t EXT_LOCK_EVENT : 7;
+  uint8_t ext_lock_event : 7;
 
   operator uint8_t() const;
 };
@@ -692,7 +692,7 @@ struct RESET_EVENT {
    * generation. All reset events must be detected at the same time to trigger
    * the reset.
    */
-  uint8_t RESET_EVENT : 7;
+  uint8_t reset_event : 7;
 
   operator uint8_t() const;
 };
