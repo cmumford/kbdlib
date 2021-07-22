@@ -26,3 +26,12 @@ jobs:
           # Forced off to avoid unintentionally enabling when upgrading to
           # new version.
           EC_FIX_ERROR: false
+
+  ubuntu-build:
+    name: Ubuntu Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: CheckoutCode
+      uses: actions/checkout@v2.0.0
+    - name: Build project
+      uses: nicledomaS/cmake_build_action@v1.4
