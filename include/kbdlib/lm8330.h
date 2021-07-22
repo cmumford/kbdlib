@@ -111,6 +111,24 @@ struct IOCFG {
 };
 
 /**
+ * Keypad Settle Time Register.
+ */
+struct KBDSETTLE {
+  uint8_t WAIT;  // The default value 0x80 : 0xBF sets a time target of 12 msec.
+
+  operator uint8_t() const { return WAIT; }
+};
+
+/**
+ * Debounce Time Register.
+ */
+struct KBDBOUNCE {
+  uint8_t WAIT;  // The default value 0x80 : 0xBF sets a time target of 12 msec.
+
+  operator uint8_t() const { return WAIT; }
+};
+
+/**
  * Defines the physical keyboard matrix size.
  */
 struct KBDSIZE {
@@ -131,6 +149,17 @@ struct CLKEN {
   uint8_t TIMEN : 1;      // PWM timer 0, 1, 2 clock enable.
   uint8_t Reserved2 : 1;  // Reserved - set to zero.
   uint8_t KBDEN : 1;      // Keyboard clock enabled (enables/disables key scan).
+
+  operator uint8_t() const;
+};
+
+/**
+ * Auto-sleep Enable Register.
+ */
+struct AUTOSLP {
+  uint8_t Reserved : 7;
+  uint8_t ENABLE : 1;  // Enables automatic sleep mode after a defined activity
+                       // time stored in the AUTOSLPTI register.
 
   operator uint8_t() const;
 };

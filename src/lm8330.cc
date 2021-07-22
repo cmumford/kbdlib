@@ -25,6 +25,10 @@ CLKEN::operator uint8_t() const {
          (static_cast<uint8_t>(KBDEN) << 0);
 }
 
+AUTOSLP::operator uint8_t() const {
+  return ENABLE;
+}
+
 IRQST::IRQST(uint8_t value)
     : PORIRQ((value & 0b10000000) >> 7),
       KBDIRQ((value & 0b01000000) >> 6),
