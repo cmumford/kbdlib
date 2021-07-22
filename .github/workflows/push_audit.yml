@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: CheckoutCode
+      - name: Checkout code
         uses: actions/checkout@v2
         with:
           # 0: fetch all history for all tags/branches.
@@ -31,7 +31,7 @@ jobs:
     name: Ubuntu Build
     runs-on: ubuntu-latest
     steps:
-    - name: CheckoutCode
+    - name: Checkout code
       uses: actions/checkout@v2.0.0
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.4
