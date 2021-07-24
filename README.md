@@ -1,5 +1,7 @@
 A C++ library for interfacing with a few keyboard IC's.
 
+![Status](https://github.com/cmumford/kbdlib/actions/workflows/push_audit.yml/badge.svg)
+
 Supported Keyboard IC's:
 
 1. [ADP5589](https://www.analog.com/en/products/adp5589.html#)
